@@ -1,21 +1,21 @@
 # Hyperledger Fabric Root Ca Config
 
 ## 运行根Ca服务器
->     根ca服务器
+_建议对于根Ca的处理，只用于颁发orderer和peer的证书，我在处理的时候是颁发的orderer证书，颁发peer证书的话同理_
 * 进入自己的根Ca目录，比如：
 ```
 cd /data/root-ca-admin
 ```
-* 在命令行运行根Ca服务器，命令行会显示Ca的信息。
+  * 在命令行运行根Ca服务器，命令行会显示Ca的信息。
 ```
 fabric-ca-server start -b admin:pass --cfg.affiliations.allowremove  --cfg.identities.allowremove &
 ```
-* 在后台运行根Ca服务器，命令行不会显示Ca的信息，但是在启动目录会有日志文件。根据日志文件可以查看到信息。 
+  * 在后台运行根Ca服务器，命令行不会显示Ca的信息，但是在启动目录会有日志文件。根据日志文件可以查看到信息。 
 ```
 nohup fabric-ca-server start -b admin:pass --cfg.affiliations.allowremove  --cfg.identities.allowremove & 2>&1 &
 ```
 
-## 配置节点生成的证书目录，用于存放节点的管理员和节点证书
+### 配置节点生成的证书目录，用于存放节点的管理员和节点证书
 * 进入数据存放目录（可根据自行配置目录）
 ```
 cd /data/
@@ -77,11 +77,11 @@ id:
       value: admin
       ecert: true
 ```
-* 注册peer节点的证书
+* 注册orderer节点的管理员证书
 ```
 fabric-ca-client register -H `pwd`/fabric-ca-files/admin --id.secret=password
 ```
-* 创建peer的管理员目录文件
+* 创建orderer的管理员目录文件
 ```
 mkdir -p ./fabric-ca-files/wheel.io/admin
 ```
@@ -101,15 +101,15 @@ id:
       value: orderer
       ecert: true
 ```
-* 注册orderer管理员的证书
+* 注册orderer0管理员的证书
 ```
 fabric-ca-client register -H `pwd`/fabric-ca-files/wheel.io/admin --id.secret=password
 ```
-* 创建orderer0的证书文件
+* 创建orderer0的证书文件目录
 ```
 mkdir ./fabric-ca-files/wheel.io/orderer0
 ```
-* 登记orderer0的证书
+* 登记orderer0的管理员证书
 ```
 fabric-ca-client enroll -u http://orderer0.wheel.io:password@localhost:7054 -H `pwd`/fabric-ca-files/wheel.io/orderer0
 ```
