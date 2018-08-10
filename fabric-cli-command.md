@@ -35,5 +35,6 @@ peer chaincode instantiate -o orderer0.wheel.io:7050 --tls true --cafile $ORDERE
 > 更新链码
 peer chaincode upgrade -o orderer0.wheel.io:7050 --tls true --cafile $ORDERER_CA -C mychannel -n smartchaincode -v 9.3 -c '{"Args":["init"]}' -P "AND('Org1MSP.member','Org2MSP.member')"
 
+> 操作链码
 peer chaincode invoke -o orderer0.wheel.io:7050  --tls true --cafile $ORDERER_CA -C mychannel -n myccc -c '{"Args":["invoke","a","b","10"]}'
 ```
