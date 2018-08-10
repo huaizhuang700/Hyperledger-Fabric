@@ -1,7 +1,9 @@
 # fabric cli command
 
+
 ```
-docker exec -it cli bash > 进入docker控制台
+ > 进入docker控制台
+docker exec -it cli bash
 
 > 指定ORDERER的证书文件
 ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/wheel.io/orderers/orderer0.wheel.io/msp/tlscacerts/tlsca.wheel.io-cert.pem
