@@ -28,15 +28,15 @@ mkdir -p `pwd`/fabric-ca-files/admin
 ```
 fabric-ca-client enroll -u http://admin:pass@localhost:7054 -H `pwd`/fabric-ca-files/admin
 ```
-** 查看组织关系命令
+  * 查看组织关系命令
 ```
 fabric-ca-client  -H `pwd`/fabric-ca-files/admin  affiliation list
 ```
-** 删除组织关系命令
+  * 删除组织关系命令
 ```
 fabric-ca-client -H `pwd`/fabric-ca-files/admin  affiliation remove --force  org1
 ```
-** 添加组织关系命令,比如：
+  * 添加组织关系命令,比如：
 ```
 fabric-ca-client  -H `pwd`/fabric-ca-files/admin  affiliation add io
 fabric-ca-client  -H `pwd`/fabric-ca-files/admin  affiliation add io.wheel
@@ -114,7 +114,7 @@ mkdir ./fabric-ca-files/wheel.io/orderer0
 fabric-ca-client enroll -u http://orderer0.wheel.io:password@localhost:7054 -H `pwd`/fabric-ca-files/wheel.io/orderer0
 ```
 
-** 如果做orderer集群
+_如果做orderer集群的化，那么就得颁发orderer2的证书_
 * 修改orderer1的配置文件fabric-ca-files/wheel.io/admin/fabric-ca-client-config.yaml
 ```
 id:
@@ -140,6 +140,4 @@ mkdir ./fabric-ca-files/wheel.io/orderer1
 fabric-ca-client enroll -u http://orderer1.wheel.io:password@localhost:7054 -H `pwd`/fabric-ca-files/wheel.io/orderer1
 ```
 
-
-
-
+_接下来就是，替换对应的证书文件夹下的证书文件即可_
