@@ -1,5 +1,14 @@
 # Hyperledger Fabric Root Config
 
+*如果在ubunt操作系统中，只需安装：*
+```
+apt install libltdl3-dev
+```
+*如果在centos操作系统中，只需安装：*
+```
+ yum install libtool-ltdl-devel*
+```
+
 ## 根Ca服务器
 _建议对于根Ca的处理，只用于颁发orderer和peer的证书，我在处理的时候是颁发的orderer证书，颁发peer证书的话同理_
 * 进入自己的根Ca目录，比如：
