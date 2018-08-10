@@ -1,4 +1,4 @@
-# Hyperledger Fabric Root Ca Config
+# Hyperledger Fabric Root Config
 
 ## 根Ca服务器
 _建议对于根Ca的处理，只用于颁发orderer和peer的证书，我在处理的时候是颁发的orderer证书，颁发peer证书的话同理_
@@ -377,3 +377,5 @@ mkdir ./fabric-ca-files/peers/org2.wheel.io/peer1
 ```
 fabric-ca-client enroll -u http://peer1.org2.wheel.io:password@localhost:7054 -H `pwd`/fabric-ca-files/peers/org2.wheel.io/peer1
 ```
+
+*替换相应的证书文件，启动网络*
