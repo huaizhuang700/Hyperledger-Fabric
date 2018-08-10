@@ -1,6 +1,7 @@
 # Hyperledger Fabric Root Ca Config
 
 ## 运行根Ca服务器
+>     根ca服务器
 * 进入自己的根Ca目录，比如：
 ```
 cd /data/root-ca-admin
