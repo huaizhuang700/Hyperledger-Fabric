@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatterProjectSettings">
+    <option name="projectSpecificProfile">
+      <ProjectSpecificProfile>
+        <option name="eclipseVersion" value="ECLIPSE_44" />
+        <option name="formatter" value="ECLIPSE" />
+        <option name="importOrdering" value="ECLIPSE_44" />
+        <option name="pathToConfigFileJava" value="$USER_HOME$/zxbit_eclipse_code_formatter.xml" />
+        <option name="useOldEclipseJavaFormatter" value="true" />
+      </ProjectSpecificProfile>
+    </option>
+  </component>
+</project>
